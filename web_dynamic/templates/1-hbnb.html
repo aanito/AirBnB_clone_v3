@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../static/styles/4-common.css?{{ cache_id }}">
@@ -7,13 +8,21 @@
     <link rel="stylesheet" href="../static/styles/3-header.css?{{ cache_id }}">
     <link rel="stylesheet" href="../static/styles/6-filters.css?{{ cache_id }}">
     <link rel="stylesheet" href="../static/styles/8-places.css?{{ cache_id }}">
-    <link rel="icon" href="../static/images/icon.png?{{ cache_id }}" type ="image/png">
+    <link rel="icon" href="../static/images/icon.png?{{ cache_id }}" type="image/png">
     <title>AirBnB clone</title>
+    <!-- importing jQuery -->
+    <!--<script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <!-- importing js files -->
+    <script type="text/javascript" src="../static/scripts/1-hbnb.js?{{ cache_id }}"></script>
 </head>
+
 <body>
     <header>
         <div class="logo">
-            
+
         </div>
     </header>
     <div class="container">
@@ -39,7 +48,7 @@
                 <h4>&nbsp;</h4>
                 <ul class="popover">
                     {% for amenity in amenities|sort(attribute='name') %}
-                    <li>{{ amenity.name }}</li>
+                    <li><input type="checkbox" data-id="{{ amenity.id }}" data-name="{{ amenity.name }}">{{ amenity.name }}</li>
                     {% endfor %}
                 </ul>
             </div>
@@ -87,4 +96,5 @@
         </p>
     </footer>
 </body>
+
 </html>

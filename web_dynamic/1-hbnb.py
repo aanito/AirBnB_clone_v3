@@ -12,14 +12,14 @@ app.url_map.strict_slashes = False
 
 
 # begins rendering
-@app.route('/0-hbnb')
+@app.route('/1-hbnb')
 def filters():
     """load filters"""
     cache_id = uuid4()
     states = storage.all(State).values()
     amenities = storage.all(Amenity).values()
     places = storage.all(Place).values()
-    return render_template('0-hbnb.html', states=states, amenities=amenities, places=places, cache_id=cache_id)
+    return render_template('1-hbnb.html', states=states, amenities=amenities, places=places, cache_id=cache_id)
 
 
 @app.teardown_appcontext
